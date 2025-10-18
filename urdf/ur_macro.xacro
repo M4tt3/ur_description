@@ -150,13 +150,15 @@
     <link name="${tf_prefix}base_link"/>
     <link name="${tf_prefix}base_link_inertia">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <!-- <origin xyz="0 0 0" rpy="0 0 ${pi}"/> -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <xacro:get_mesh name="base" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <!-- <origin xyz="0 0 0" rpy="0 0 ${pi}"/> -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <xacro:get_mesh name="base" type="collision"/>
         </geometry>
@@ -347,7 +349,8 @@
            Use the joint between 'base_link' and 'base_link_inertia' (a dummy
            link/frame) to introduce the necessary rotation over Z (of pi rad).
       -->
-      <origin xyz="0 0 0" rpy="0 0 ${pi}" />
+      <!-- <origin xyz="0 0 0" rpy="0 0 ${pi}" /> -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
     <joint name="${tf_prefix}shoulder_pan_joint" type="revolute">
       <parent link="${tf_prefix}base_link_inertia" />
